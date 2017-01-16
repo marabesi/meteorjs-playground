@@ -1,10 +1,12 @@
-
 <head>
-  <title>Video app</title>
+  <base href="/"/>
 </head>
 
 <body>
   <div class="container" ng-app="video-app">
-    <user-list><user-list/>
+
+    <navigation></navigation>
+
+    <div ui-view=""></div>
   </div>
 </body>
