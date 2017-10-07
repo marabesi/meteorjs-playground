@@ -1,0 +1,26 @@
+<body>
+    <div class="container">
+        <header>
+            <h1>Todo List</h1>
+        </header>
+        <form class="new-task" method="post">
+            <input type="text" name="text" placeholder="Type to add new tasks" />
+        </form>
+        {{#if tasks.count}}
+            <ul>
+                {{#each tasks}}
+                    {{> task}}
+                {{/each}}
+           </ul>
+        {{else}}
+            <p>You don't have any task</p>
+        {{/if}}
+    </div>
+</body>
+
+<template name="task">
+    <li class="mark-as-done {{#if done}}done{{/if}}">
+        <input type="checkbox" checked={{done}} class="mark-as-done {{#if done}}done{{/if}}" value="{{done}}">
+        {{text}} <button class="remove-task">remove</button>
+    </li>
+</template>
