@@ -15,12 +15,14 @@ Template.body.events({
         const target = event.target;
         const text = target.text.value;
 
-        Tasks.insert({
-            text,
-            createdAt: new Date(),
-        });
+        if (text) {
+            Tasks.insert({
+                text,
+                createdAt: new Date(),
+            });
 
-        target.text.value = '';
+            target.text.value = '';
+        }
     }
 });
 
